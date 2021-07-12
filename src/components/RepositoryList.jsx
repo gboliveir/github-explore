@@ -1,4 +1,10 @@
-const nameRepository1 = "ReactJS";
+import { RepositoryItem } from "./RepositoryItem";
+
+const repository = {
+    name: "GitHub Explore",
+    description: "Project - ReactJS",
+    url: "https://github.com/gboliveir/github-explore"
+}
 
 export function RepositoryList() {
     return (
@@ -6,32 +12,9 @@ export function RepositoryList() {
             <h1>Lista de Repositórios</h1>
 
             <ul>
-                <li>
-                    <strong>{nameRepository1}</strong>
-                    <p>Descrição</p>
-
-                    <a href="#">
-                        Acessar repositório
-                    </a>
-                </li>
-
-                <li>
-                    <strong>NameRepository</strong>
-                    <p>Descrição</p>
-
-                    <a href="#">
-                        Acessar repositório
-                    </a>
-                </li>
-
-                <li>
-                    <strong>NameRepository</strong>
-                    <p>Descrição</p>
-
-                    <a href="#">
-                        Acessar repositório
-                    </a>
-                </li>
+                <RepositoryItem repository={repository} />
+                <RepositoryItem repository={repository} />
+                <RepositoryItem />
             </ul>
         </section>
     );
