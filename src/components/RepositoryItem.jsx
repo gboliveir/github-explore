@@ -2,10 +2,10 @@
 export function RepositoryItem(props) {
     return(
         <li>
-            <strong>{props.repository?.name ?? "Name not found"}</strong>
-            <p>{props.repository?.description ?? "Description not found"}</p>
+            <strong>{props.repository.name}</strong>
+            <p>{props.repository.description}</p>
 
-            <a href={props.repository?.url ?? "Url not found"}>
+            <a href={props.repository.html_url}>
                 Acessar repositório
             </a>
         </li>

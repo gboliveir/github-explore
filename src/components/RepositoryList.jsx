@@ -2,12 +2,6 @@ import { RepositoryItem } from "./RepositoryItem";
 import '../styles/repositories.scss'
 import { useEffect, useState } from "react";
 
-const repository = {
-    name: "GitHub Explore",
-    description: "Project - ReactJS",
-    url: "https://github.com/gboliveir/github-explore"
-}
-
 export function RepositoryList() {
     const [repositories, setRepositories] = useState([]);
 
@@ -23,9 +17,9 @@ export function RepositoryList() {
             <h1>Lista de Repositórios</h1>
 
             <ul>
-                <RepositoryItem repository={repository} />
-                <RepositoryItem repository={repository} />
-                <RepositoryItem />
+                {repositories.map(repository => {
+                    return <RepositoryItem key={repository.name} repository={repository} />
+                })}
             </ul>
         </section>
     );
